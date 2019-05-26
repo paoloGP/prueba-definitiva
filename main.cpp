@@ -4,6 +4,7 @@
 using namespace std;
 
 int main() {
-    menu_del_juego();
+    tipo tablero[9][9] = {};
+    menu_del_juego(tablero);
     return 0;
 }
