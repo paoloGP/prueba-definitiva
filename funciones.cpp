@@ -14,25 +14,19 @@ void imprimir(tipo arr[][9]){
         int a = fila +1;
         cout << a <<setw(3);
         for (int columna = 0; columna < 9; columna++) {
-            if(fila == 3 || fila == 4 || fila == 5) {
-                if (columna > 0 && columna < 7)
-                    cout << arr[fila][columna] << " - ";
-                else
+           if(arr[fila][columna]== 'O' || arr[fila][columna]== '+') {
+                if (arr[fila][columna+1] == 'x')
                     cout << arr[fila][columna] << "   ";
+                else
+                    cout << arr[fila][columna] << " - ";
             }
             else
-                if(fila > 0 && fila <8) {
-                    if (columna > 2 && columna < 5)
-                        cout << arr[fila][columna] << " - ";
-                    else
-                        cout << arr[fila][columna] << "   ";
-                }
-                else
-                    cout << arr[fila][columna] << "   ";
+                cout << arr[fila][columna] << "   ";
         }
         cout << endl << endl;
     }
 }
+
 void menu_del_juego(){
     int a;
     tipo arr[9][9] = {};
