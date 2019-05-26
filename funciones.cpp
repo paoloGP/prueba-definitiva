@@ -25,8 +25,12 @@ void imprimir(tipo arr2[][9]){
         }
         cout << endl;
         for(int i = 0; i<9 ;i++){
-            if(arr2[fila][i] == 'O' || arr2[fila][i] == '+')
-                cout << setw(4) << '|';
+            if(arr2[fila][i] == 'O' || arr2[fila][i] == '+') {
+                if (arr2[fila + 1][i] == 'x')
+                    cout << setw(4) << ' ';
+                else
+                    cout << setw(4) << '|';
+            }
             else
                 cout << setw(4) << " ";
         }
