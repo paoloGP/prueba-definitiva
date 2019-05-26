@@ -41,7 +41,7 @@ void imprimir(tipo arr2[][9]){
 void menu_del_juego(tipo arr[][9]){
     int a;
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
-    cout << "(1) ingles" << endl << "(2) frances" << endl << "(3) aleman" << endl<<"(4) asimetrico"<<endl;
+    cout << "(1) ingles" << endl << "(2) aleman" << endl<< "(3) asimetrico" <<endl;
     cout << "*******************" << endl;
     do {
         cout << "Elegir modo:";
@@ -88,10 +88,8 @@ void tableros(tipo arr1[][9],int opcion){
                 tab[fila][columna] = ingles[fila][columna];
             else{
                 if(opcion == 2)
-                    tab[fila][columna] = frances[fila][columna];
-                else if(opcion == 3)
                     tab[fila][columna] = aleman[fila][columna];
-                else if(opcion == 4)
+                else if(opcion == 3)
                     tab[fila][columna] = asimetrico[fila][columna];
             }
         }
