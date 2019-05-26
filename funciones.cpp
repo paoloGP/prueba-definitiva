@@ -14,16 +14,23 @@ void imprimir(tipo arr2[][9]){
         int a = fila +1;
         cout << a <<setw(3);
         for (int columna = 0; columna < 9; columna++) {
-           if(arr[fila][columna]== 'O' || arr[fila][columna]== '+') {
-                if (arr[fila][columna+1] == 'x')
-                    cout << arr[fila][columna] << "   ";
+            if(arr2[fila][columna]== 'O' || arr2[fila][columna]== '+') {
+                if (arr2[fila][columna+1] == 'x')
+                    cout << arr2[fila][columna] << "   ";
                 else
-                    cout << arr[fila][columna] << " - ";
+                    cout << arr2[fila][columna] << " - ";
             }
             else
-                cout << arr[fila][columna] << "   ";
+                cout << arr2[fila][columna] << "   ";
         }
-        cout << endl << endl;
+        cout << endl;
+        for(int i = 0; i<9 ;i++){
+            if(arr2[fila][i] == 'O' || arr2[fila][i] == '+')
+                cout << setw(4) << '|';
+            else
+                cout << setw(4) << " ";
+        }
+        cout << endl;
     }
 }
 
