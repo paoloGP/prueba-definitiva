@@ -85,12 +85,12 @@ void tableros(tipo arr1[][9],int opcion){
     for(int fila = 0; fila < 9 ; fila++){
         for(int columna = 0; columna < 9 ; columna++){
             if(opcion == 1)
-                tab[fila][columna] = ingles[fila][columna];
+                arr1[fila][columna] = ingles[fila][columna];
             else{
                 if(opcion == 2)
-                    tab[fila][columna] = aleman[fila][columna];
+                    arr1[fila][columna] = aleman[fila][columna];
                 else if(opcion == 3)
-                    tab[fila][columna] = asimetrico[fila][columna];
+                    arr1[fila][columna] = asimetrico[fila][columna];
             }
         }
     }
