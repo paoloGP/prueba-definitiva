@@ -42,7 +42,7 @@ void menu_del_juego(){
 
 }
 
-tipo tableros(tipo tab[][9],int opcion){
+void tableros(tipo tab[][9],int opcion){
     tipo ingles [9][9] =   {{'x','x','x','x','x','x','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
