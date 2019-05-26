@@ -72,7 +72,7 @@ void tableros(tipo arr1[][9],int opcion){
                            {'x','x','x','x','x','x','x','x','x'},
                            {'x','x','x','x','x','x','x','x','x'},};
     
-     tipo aleman [9][9] =   {{'x','x','x','O','O','O','x','x','x'},
+     tipo aleman [9][9] =  {{'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
                             {'O','O','O','O','O','O','O','O','O'},
