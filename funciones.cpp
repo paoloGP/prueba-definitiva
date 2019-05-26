@@ -157,7 +157,7 @@ bool fin_del_juego(tipo arr4[][9]){
     for(int i = 0; i < 9;i++){
         for(int j = 0; j < 9; j++){
             if(arr4[i][j] == 'O') {
-                if (arr4[i + 2][j] == '+' || arr4[i - 2][j] == '+' || arr4[i][j + 2] == '+' || arr4[i][j - 2] == '+')
+                if ((arr4[i+2][j]=='+'&&arr4[i+1][j]=='O')||(arr4[i-2][j] =='+'&&arr4[i-1][j]=='O') ||(arr4[i][j+2]=='+'&&arr4[i][j+1]=='O') || (arr4[i][j-2]=='+'&&arr4[i][j-1]=='O'))
                     f = f+1;
                 else
                     f = f + 0;
