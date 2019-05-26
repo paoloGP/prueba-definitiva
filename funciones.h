@@ -9,8 +9,8 @@
 using namespace std;
 typedef char tipo;
 
-void menu_del_juego();
-tipo tableros(tipo tab[][9],int opcion);
-void imprimir(tipo arr[][9]);
+void menu_del_juego(tipo arr[][9]);
+void tableros(tipo arr1[][9],int opcion);
+void imprimir(tipo arr2[][9]);
 
 #endif //UNTITLED_FUNCIONES_H
