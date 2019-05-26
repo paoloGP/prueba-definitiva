@@ -4,7 +4,7 @@
 #include "funciones.h"
 #include <iomanip>
 
-void imprimir(tipo arr[][9]){
+void imprimir(tipo arr2[][9]){
     cout << endl;
     for (int j = 0; j < 9; j++)
         cout << setw(4) << j + 1;
@@ -27,7 +27,7 @@ void imprimir(tipo arr[][9]){
     }
 }
 
-void menu_del_juego(){
+void menu_del_juego(tipo arr[][9]){
     int a;
     tipo arr[9][9] = {};
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
@@ -42,7 +42,7 @@ void menu_del_juego(){
 
 }
 
-void tableros(tipo tab[][9],int opcion){
+void tableros(tipo arr1[][9],int opcion){
     tipo ingles [9][9] =   {{'x','x','x','x','x','x','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
