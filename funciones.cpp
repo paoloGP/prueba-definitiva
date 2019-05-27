@@ -42,22 +42,20 @@ void imprimir(tipo arr2[][9]){
 void menu_del_juego(tipo arr[][9]){
     int a;
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
-    cout << "(1) ingles" << endl << "(2) aleman" << endl << "(3) asimetrico" << endl;
+    cout << "1.ingles" << endl << "2.aleman" << endl << "3.asimetrico" << endl;
     cout << "*******************" << endl;
-    cout << "-Si quiere salir, ingresar la palabra \"salir\"." << endl;
-    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar las cuatro posiciones 0." << endl;
+    cout << "0.Salir del juego" << endl;
+    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar 0 en las cuatro posiciones." << endl;
     do {
-        cout << "Elegir modo:";
+        cout << " Elegir modo:";
         cin >> a;
         if(!a)
             break;
-    }while (a < 1 || a > 4);
+    }while (a < 0 || a > 4);
     if(a) {
         tableros(arr, a);
         imprimir(arr);
     }
-    else
-        cout << "Adios.";
 }
 
 void tableros(tipo arr1[][9],int opcion){
@@ -119,10 +117,9 @@ void tableros(tipo arr1[][9],int opcion){
 
 void pedir(tipo arr5[][9], int &sa){
     int f1 , c1 , f2 , c2;
-    cout << "ingresar la posicion de origen (fila , columna): ";
+    cout << "ingresar la posicion de origen (fila , columna):";
     cin >> f1 >> c1;
-    cout << endl;
-    cout << "ingresar la posicion de destino (fila , columna): ";
+    cout << "ingresar la posicion de destino (fila , columna):";
     cin >> f2 >> c2;
     if(!f1 || !c1 || !f2 || !c2 || (f1 == 0 && f2 == 0 && c1 == 0 && c2 == 0))
         sa = sa + 1;
