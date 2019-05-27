@@ -44,20 +44,20 @@ void menu_del_juego(tipo arr[][9]){
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
     cout << "(1) ingles" << endl << "(2) aleman" << endl << "(3) asimetrico" << endl;
     cout << "*******************" << endl;
-    cout << "Si quiere salir, ingresar la palabra \"salir\"." << endl;
-    cout << "Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar las cuatro posiciones 0." << endl;
+    cout << "-Si quiere salir, ingresar la palabra \"salir\"." << endl;
+    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar las cuatro posiciones 0." << endl;
     do {
         cout << "Elegir modo:";
         cin >> a;
         if(!a)
             break;
-    }while (a < 1 || a > 3);
+    }while (a < 1 || a > 4);
     if(a) {
         tableros(arr, a);
         imprimir(arr);
     }
     else
-        cout << endl << "Adios.";
+        cout << "Adios.";
 }
 
 void tableros(tipo arr1[][9],int opcion){
@@ -91,6 +91,16 @@ void tableros(tipo arr1[][9],int opcion){
                              {'x','x','x','O','O','O','x','x','x'},
                              {'x','x','x','x','x','x','x','x','x'}};
 
+    tipo easy [9][9] =  {{'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','O','+','+','O','O','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'},
+                         {'x','x','x','x','x','x','x','x','x'}};
+
     for(int fila = 0; fila < 9 ; fila++){
         for(int columna = 0; columna < 9 ; columna++){
             if(opcion == 1)
@@ -100,12 +110,14 @@ void tableros(tipo arr1[][9],int opcion){
                     arr1[fila][columna] = aleman[fila][columna];
                 else if(opcion == 3)
                     arr1[fila][columna] = asimetrico[fila][columna];
+                else if(opcion == 4)
+                    arr1[fila][columna] = easy[fila][columna];
             }
         }
     }
 }
 
-void pedir(tipo arr5[][9], int &anti){
+void pedir(tipo arr5[][9], int &sa){
     int f1 , c1 , f2 , c2;
     cout << "ingresar la posicion de origen (fila , columna): ";
     cin >> f1 >> c1;
@@ -113,7 +125,7 @@ void pedir(tipo arr5[][9], int &anti){
     cout << "ingresar la posicion de destino (fila , columna): ";
     cin >> f2 >> c2;
     if(!f1 || !c1 || !f2 || !c2 || (f1 == 0 && f2 == 0 && c1 == 0 && c2 == 0))
-        anti = anti + 1;
+        sa = sa + 1;
     else {
         f1 = f1 - 1;
         f2 = f2 - 1;
