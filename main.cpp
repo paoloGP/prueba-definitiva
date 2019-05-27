@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     tipo tablero[9][9] = {};
     menu_del_juego(tablero);
-    if(tablero[0][0] == 'x') {
+    if(tablero[0][0] == ' ') {
         int salida =0;
         while(!fin_del_juego(tablero) && salida < 1)
             pedir(tablero , salida);
