@@ -24,9 +24,9 @@ int main() {
                 cout << "Lo lograste !!!";
         }
         else
-            cout << endl << "Adios";
+            cout << endl << "Gracias por jugar.";
     }
     else
-        cout << endl << "Gracias por su tiempo.";
+        cout << endl << "Gracias por jugar.";
     return 0;
 }
