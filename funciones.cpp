@@ -62,27 +62,27 @@ void tableros(tipo arr1[][9],int opcion){
                             {'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','O','O','O','x','x','x'},
                             {'x','x','x','x','x','x','x','x','x'}};
-    
-     tipo aleman [9][9] =  {{'x','x','x','O','O','O','x','x','x'},
-                            {'x','x','x','O','O','O','x','x','x'},
-                            {'x','x','x','O','O','O','x','x','x'},
-                            {'O','O','O','O','O','O','O','O','O'},
-                            {'O','O','O','O','+','O','O','O','O'},
-                            {'O','O','O','O','O','O','O','O','O'},
-                            {'x','x','x','O','O','O','x','x','x'},
-                            {'x','x','x','O','O','O','x','x','x'},
-                            {'x','x','x','O','O','O','x','x','x'}};
-     
-     tipo asimetrico [9][9] ={{'x','x','x','O','O','O','x','x','x'},
-                              {'x','x','x','O','O','O','x','x','x'},
-                              {'x','x','x','O','O','O','x','x','x'},
-                              {'x','O','O','O','O','O','O','O','O'},
-                              {'x','O','O','O','+','O','O','O','O'},
-                              {'x','O','O','O','O','O','O','O','O'},
-                              {'x','x','x','O','O','O','x','x','x'},
-                              {'x','x','x','O','O','O','x','x','x'},
-                              {'x','x','x','x','x','x','x','x','x'}};
-    
+
+    tipo aleman [9][9] =  {{'x','x','x','O','O','O','x','x','x'},
+                           {'x','x','x','O','O','O','x','x','x'},
+                           {'x','x','x','O','O','O','x','x','x'},
+                           {'O','O','O','O','O','O','O','O','O'},
+                           {'O','O','O','O','+','O','O','O','O'},
+                           {'O','O','O','O','O','O','O','O','O'},
+                           {'x','x','x','O','O','O','x','x','x'},
+                           {'x','x','x','O','O','O','x','x','x'},
+                           {'x','x','x','O','O','O','x','x','x'}};
+
+    tipo asimetrico [9][9] ={{'x','x','x','O','O','O','x','x','x'},
+                             {'x','x','x','O','O','O','x','x','x'},
+                             {'x','x','x','O','O','O','x','x','x'},
+                             {'x','O','O','O','O','O','O','O','O'},
+                             {'x','O','O','O','+','O','O','O','O'},
+                             {'x','O','O','O','O','O','O','O','O'},
+                             {'x','x','x','O','O','O','x','x','x'},
+                             {'x','x','x','O','O','O','x','x','x'},
+                             {'x','x','x','x','x','x','x','x','x'}};
+
     for(int fila = 0; fila < 9 ; fila++){
         for(int columna = 0; columna < 9 ; columna++){
             if(opcion == 1)
@@ -99,39 +99,41 @@ void tableros(tipo arr1[][9],int opcion){
 
 void pedir(tipo arr5[][9]){
     int f1 , c1 , f2 , c2;
-    do{
-        cout << "ingresar la posicion de origen (fila , columna): ";
-        cin >> f1 >> c1;
-        cout << endl;
-        cout << "ingresar la posicion de destino (fila , columna): ";
-        cin >> f2 >> c2;
-    }while (f1 > 9 || f1 < 1 || f2 > 9 || f2 < 1 || c1 > 9 || c1 < 1 || c2 > 9 || c2 < 1);
+    cout << "ingresar la posicion de origen (fila , columna): ";
+    cin >> f1 >> c1;
+    cout << endl;
+    cout << "ingresar la posicion de destino (fila , columna): ";
+    cin >> f2 >> c2;
     f1 = f1 - 1;
     f2 = f2 - 1;
     c1 = c1 - 1;
     c2 = c2 - 1;
-    verificar(arr5,f1,c1,f2,c2);
+    verificar(arr5, f1, c1, f2, c2);
 }
 
 void verificar(tipo arr6[][9],int f1 ,int c1, int f2 , int c2) {
-    int distanciaf = f2 -f1;
-    int distanciac = c2 - c1;
-    if(distanciac == 0 && distanciaf == 0)
-        cout << "Movimiento erroneo.";
+    if(!f1 || !c1 || !f2 || !c2)
+        cout << "Uno de tus entradas no es numero.";
     else {
-        if(distanciac == 1 ||  distanciaf == 1 || distanciac == -1 || distanciaf == -1)
-            cout << "Movimiento erroneo.";
+        int distanciaf = f2 - f1;
+        int distanciac = c2 - c1;
+        if (distanciac == 0 && distanciaf == 0)
+            cout << "Movimiento erroneo." << endl;
         else {
-            if (distanciac > 2 || distanciac < -2 || distanciaf < -2 || distanciaf > 2)
-                cout << "Movimiento erroneo.";
+            if (distanciac == 1 || distanciaf == 1 || distanciac == -1 || distanciaf == -1)
+                cout << "Movimiento erroneo."<< endl;
             else {
-                if ( (distanciac == 2 || distanciac == -2) && (distanciaf == 2 || distanciaf == -2))
-                    cout << "Movimiento erroneo.";
+                if (distanciac > 2 || distanciac < -2 || distanciaf < -2 || distanciaf > 2)
+                    cout << "Movimiento erroneo."<< endl;
                 else {
-                    if (arr6[f1][c1] != 'O' || arr6[f2][c2] != '+')
-                        cout << "Movimiento erroneo.";
-                    else
-                        cambio(arr6,f1,c1,f2,c2);
+                    if ((distanciac == 2 || distanciac == -2) && (distanciaf == 2 || distanciaf == -2))
+                        cout << "Movimiento erroneo."<< endl;
+                    else {
+                        if (arr6[f1][c1] != 'O' || arr6[f2][c2] != '+')
+                            cout << "Movimiento erroneo."<< endl;
+                        else
+                            cambio(arr6, f1, c1, f2, c2);
+                    }
                 }
             }
         }
