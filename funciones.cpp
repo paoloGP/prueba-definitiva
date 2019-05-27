@@ -44,12 +44,20 @@ void menu_del_juego(tipo arr[][9]){
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
     cout << "(1) ingles" << endl << "(2) aleman" << endl << "(3) asimetrico" << endl;
     cout << "*******************" << endl;
+    cout << "Si quiere salir, ingresar la palabra \"salir\"." << endl;
+    cout << "Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar las cuatro posiciones 0." << endl;
     do {
         cout << "Elegir modo:";
         cin >> a;
+        if(!a)
+            break;
     }while (a < 1 || a > 3);
-    tableros(arr,a);
-    imprimir(arr);
+    if(a) {
+        tableros(arr, a);
+        imprimir(arr);
+    }
+    else
+        cout << endl << "Adios.";
 }
 
 void tableros(tipo arr1[][9],int opcion){
@@ -97,43 +105,43 @@ void tableros(tipo arr1[][9],int opcion){
     }
 }
 
-void pedir(tipo arr5[][9]){
+void pedir(tipo arr5[][9], int &anti){
     int f1 , c1 , f2 , c2;
     cout << "ingresar la posicion de origen (fila , columna): ";
     cin >> f1 >> c1;
     cout << endl;
     cout << "ingresar la posicion de destino (fila , columna): ";
     cin >> f2 >> c2;
-    f1 = f1 - 1;
-    f2 = f2 - 1;
-    c1 = c1 - 1;
-    c2 = c2 - 1;
-    verificar(arr5, f1, c1, f2, c2);
+    if(!f1 || !c1 || !f2 || !c2 || (f1 == 0 && f2 == 0 && c1 == 0 && c2 == 0))
+        anti = anti + 1;
+    else {
+        f1 = f1 - 1;
+        f2 = f2 - 1;
+        c1 = c1 - 1;
+        c2 = c2 - 1;
+        verificar(arr5, f1, c1, f2, c2);
+    }
 }
 
-void verificar(tipo arr6[][9],int f1 ,int c1, int f2 , int c2) {
-    if(!f1 || !c1 || !f2 || !c2)
-        cout << "Uno de tus entradas no es numero.";
+void verificar(tipo arr6[][9],int fi1 ,int co1, int fi2 , int co2) {
+    int distanciaf = fi2 - fi1;
+    int distanciac = co2 - co1;
+    if (distanciac == 0 && distanciaf == 0)
+        cout << "Movimiento erroneo." << endl;
     else {
-        int distanciaf = f2 - f1;
-        int distanciac = c2 - c1;
-        if (distanciac == 0 && distanciaf == 0)
-            cout << "Movimiento erroneo." << endl;
+        if (distanciac == 1 || distanciaf == 1 || distanciac == -1 || distanciaf == -1)
+            cout << "Movimiento erroneo."<< endl;
         else {
-            if (distanciac == 1 || distanciaf == 1 || distanciac == -1 || distanciaf == -1)
+            if (distanciac > 2 || distanciac < -2 || distanciaf < -2 || distanciaf > 2)
                 cout << "Movimiento erroneo."<< endl;
             else {
-                if (distanciac > 2 || distanciac < -2 || distanciaf < -2 || distanciaf > 2)
+                if ((distanciac == 2 || distanciac == -2) && (distanciaf == 2 || distanciaf == -2))
                     cout << "Movimiento erroneo."<< endl;
                 else {
-                    if ((distanciac == 2 || distanciac == -2) && (distanciaf == 2 || distanciaf == -2))
+                    if (arr6[fi1][co1] != 'O' || arr6[fi2][co2] != '+')
                         cout << "Movimiento erroneo."<< endl;
-                    else {
-                        if (arr6[f1][c1] != 'O' || arr6[f2][c2] != '+')
-                            cout << "Movimiento erroneo."<< endl;
-                        else
-                            cambio(arr6, f1, c1, f2, c2);
-                    }
+                    else
+                        cambio(arr6, fi1, co1, fi2, co2);
                 }
             }
         }
