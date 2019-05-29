@@ -1,10 +1,15 @@
 void menu_del_juego(tipo arr[][9]){
     int a;
-    cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
+    cout << "*************************************************************************" << endl;
+    cout << "                            MENU - Juego Senku" << '\n' 
+    cout << "*************************************************************************" << endl;
+    cout << " Modos:"<<'\n',
     cout << "1.ingles" << endl << "2.aleman" << endl << "3.asimetrico" << endl;
-    cout << "*******************" << endl;
+    cout << "*************************************************************************" << endl;
     cout << "0.Salir del juego" << endl;
-    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna, o ingresar 0 en las cuatro posiciones." << endl;
+    cout << "-Si quiere salir durante el juego, ingresar una letra en fila o columna"<<'\n'<< " o ingresar 0 en las cuatro posiciones." << endl;
+    cout << "*************************************************************************" << endl;
+
     do {
         cout << " Elegir modo:";
         cin >> a;
