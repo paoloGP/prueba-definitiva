@@ -1,9 +1,3 @@
-//
-// Created by Cesar Paolo on 25/05/2019.
-//
-#include "funciones.h"
-#include <iomanip>
-
 void menu_del_juego(tipo arr[][9]){
     int a;
     cout << "MENU - Juego Senku" << "\n" << "*******************" << endl;
