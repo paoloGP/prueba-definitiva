@@ -1,7 +1,2 @@
 # prueba-definitiva
-El código está completo. Si encuentran algun error, lo escriben en el grupo de whatsap.
-:)
-  Integrantes:
-  Luis Joaquin
-  -Salomón 
-  -César García
+agregar al main.cpp y a funciones.cpp el header.h
