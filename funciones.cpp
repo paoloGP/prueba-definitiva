@@ -15,7 +15,7 @@ void menu_del_juego(tipo arr[][9]){
         cin >> a;
         if(!a)
             break;
-    }while (a < 0 || a > 4);
+    }while (a < 0 || a >= 4);
     if(a) {
         tableros(arr, a);
         imprimir(arr);
