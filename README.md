@@ -1,6 +1,11 @@
 # Requisitos:
+Tener un copilador de lenguaje C++ (CLion).
 
 # Instrucciones de uso:
+Cree un archivo funciones.h y un archivo funciones.cpp en su copilador
+Copie el codigo que se encuentra en este proyecto en cada archivo correspondiente (funciones.h, funciones.cpp, main.cpp)
+Asegúrese de que los tres archivos se encuentren en el ejecutable del programa (add_executable(Senku main.cpp funciones.cpp funciones.h))
+Ejecute el juego.
 
 # Reglas de juego:
 mover los espacios ocupados hacia los espacios
