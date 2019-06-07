@@ -1,12 +1,15 @@
 # Requisitos:
-Tener un copilador de lenguaje C++ (CLion).
+- Tener un copilador de lenguaje C++ (CLion).
+- Cree un archivo funciones.h y un archivo funciones.cpp en su copilador
+- Copie el codigo que se encuentra en este proyecto en cada archivo correspondiente (funciones.h, funciones.cpp, main.cpp)
+- Asegúrese de que los tres archivos se encuentren en el ejecutable del programa (add_executable(Senku main.cpp funciones.cpp funciones.h))
+- Ejecute el juego.
 
 # Instrucciones de uso:
-Cree un archivo funciones.h y un archivo funciones.cpp en su copilador
-Copie el codigo que se encuentra en este proyecto en cada archivo correspondiente (funciones.h, funciones.cpp, main.cpp)
-Asegúrese de que los tres archivos se encuentren en el ejecutable del programa (add_executable(Senku main.cpp funciones.cpp funciones.h))
-Ejecute el juego.
-
+1. Seleccionar tablero
+2. Ingresar la posición(Fila , columna) de la ficha que quiere mover.
+3. Ingresar la posición(Fila , columna) de destino.
+4. Repetir paso 2 y 3 hasta culminar el juego. 
 # Reglas de juego:
 mover los espacios ocupados hacia los espacios
 vacíos, pero para moverlo es requisito obligatorio saltar sobre solo un espacio que este ocupado,
