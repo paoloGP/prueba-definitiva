@@ -1,7 +1,7 @@
 void menu_del_juego(tipo arr[][9]){
     int a;
     cout << "*************************************************************************" << endl;
-    cout << "                            MENU - Juego Senku" << '\n' 
+    cout << "                            MENU - Juego Senku" << '\n'; 
     cout << "*************************************************************************" << endl;
     cout << " Modos:"<<'\n',
     cout << "1.ingles" << endl << "2.aleman" << endl << "3.asimetrico" << endl;
